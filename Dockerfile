@@ -7,6 +7,7 @@ ENV PATH=$PATH:$SCALA_HOME/bin
 
 WORKDIR /opt
 
-RUN wget "https://downloads.lightbend.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz" && \
+RUN apk add --no-cache bash && \
+    wget "https://downloads.lightbend.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz" && \
     tar xzf "scala-${SCALA_VERSION}.tgz" && \
     rm "scala-${SCALA_VERSION}.tgz"
